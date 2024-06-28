@@ -142,7 +142,7 @@ public class ManagerRoom {
                 String newPrice = scanner.nextLine();
                 System.out.println("Tinh trang phong");
                 String roomStatus = scanner.nextLine();
-                if(!isDouble(newPrice)) {
+                if(isDouble(newPrice)) {
                     room.setTypeRoom(newTypeRoom);
                     room.setPrice(Double.parseDouble(newPrice));
                     room.setRoomStatus(roomStatus);
