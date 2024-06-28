@@ -1,5 +1,3 @@
-1,vip,93092.09,trong
-2,vip,900.0,trong
-3,vippro,5000000.0,dadat
-4,binhthuong,200000.0,trong
-5,vip,45000.0,trong
+1,vip,1000000.0,empty
+3,vippro,1500000.0,ordered
+4,vip,1000000.0,ordered

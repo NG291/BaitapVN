@@ -84,22 +84,22 @@ public class ManagerRoom {
     }
 
     public void addRoom() {
-        System.out.println("Dien thong tin phong can them:");
-        System.out.println("Nhap so phong:");
+        System.out.println("Additional room information:");
+        System.out.println("Enter the room number");
         String numberRoom = scanner.nextLine();
-        System.out.println("Nhap loai phong");
+        System.out.println("Enter the type of room");
         String typeRoom = scanner.nextLine();
         System.out.println("Gia phong");
         String price = scanner.nextLine();
-        System.out.println("Nhap tinh trang phong");
+        System.out.println("Enter room status");
         String roomStatus = scanner.nextLine();
         if (isInteger(numberRoom) && (isDouble(price)) && !isRoomNumberExist(numberRoom)) {
             Room room = new Room(Integer.parseInt(numberRoom), typeRoom, Double.parseDouble(price), roomStatus);
             listRooms.add(room);
             saveToFile();
-            System.out.println("Them phong thanh cong!");
+            System.out.println("Room added successfully!");
         } else {
-            System.out.println("Loi! hoac trung so phong");
+            System.out.println("Error! duplicate room numbers");
         }
 
     }
@@ -110,8 +110,8 @@ public class ManagerRoom {
     }
 
     public void deleteRoom() {
-        System.out.println("Xoa phong");
-        System.out.println("Nhap so phong ban can xoa");
+        System.out.println("Delete room");
+        System.out.println("Enter the room number to delete");
         int numberRoomDelete = Integer.parseInt(scanner.nextLine());
         boolean found = false;
         for (Room room : listRooms) {
@@ -122,25 +122,25 @@ public class ManagerRoom {
             }
         }
         if (!found) {
-            System.out.println("khong tim thay");
+            System.out.println("Not found room!");
         } else {
-            System.out.println("Xoa thanh cong");
+            System.out.println("Deleted successfully");
         }
         saveToFile();
     }
 
     public void updateRoom() {
-        System.out.println("Sua phong");
-        System.out.println("Nhap so phong ban can sua");
+        System.out.println("Edit Room");
+        System.out.println("Enter the room number you need to repair");
         String numberRoomUpdate = scanner.nextLine();
         boolean found = false;
         for (Room room : listRooms) {
             if (room.getNumberRoom() ==Integer.parseInt(numberRoomUpdate)) {
-                System.out.println("Nhap loai phong");
+                System.out.println("Enter room type");
                 String newTypeRoom = scanner.nextLine();
-                System.out.println("Nhap gia phong");
+                System.out.println("Enter room price");
                 String newPrice = scanner.nextLine();
-                System.out.println("Tinh trang phong");
+                System.out.println("Enter room status");
                 String roomStatus = scanner.nextLine();
                 if(isDouble(newPrice)) {
                     room.setTypeRoom(newTypeRoom);
@@ -150,14 +150,14 @@ public class ManagerRoom {
                     break;
                 }
                 else {
-                    System.out.println("Nhap sai kieu du lieu. Nhap lai! ");
+                    System.out.println("Wrong data type! Please re-enter ");
                 }
             }
         }
         if (!found) {
-            System.out.println("So phong khong ton tai!");
+            System.out.println("Room number does not exist!");
         } else {
-            System.out.println("Sua thanh cong");
+            System.out.println("Edited successfully!");
         }
         saveToFile();
     }

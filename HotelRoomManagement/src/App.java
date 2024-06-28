@@ -6,11 +6,11 @@ public class App {
         try {
             Scanner scanner = new Scanner(System.in);
             while (true) {
-                System.out.println("1: Chuc nang them phong moi");
-                System.out.println("2: Chuc nang Sua thong tin phong");
-                System.out.println("3: Chuc nang xoa phong");
-                System.out.println("4: Chuc nang hien thị phong");
-                System.out.println("5: Thoat ");
+                System.out.println("1: Add new room");
+                System.out.println("2: Edit room information");
+                System.out.println("3: Delete room");
+                System.out.println("4: Show room information");
+                System.out.println("5: Exit ");
                 int chocie = Integer.parseInt(scanner.nextLine());
                 if (chocie == 5){
                     break;
@@ -29,7 +29,7 @@ public class App {
                         mr.showRoom();
                         break;
                     default:
-                        System.out.println("Nhap lai!");
+                        System.out.println("Retype!");
                 }
             }
         } catch (Exception e) {
