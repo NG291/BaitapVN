@@ -1,0 +1,4 @@
+1,thuong,200000.0,trong
+2,vip,300000.0,trong
+3,vippro,5000000.0,dadat
+4,binhthuong,200000.0,trong
